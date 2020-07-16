@@ -1,0 +1,23 @@
+<app-home></app-home>
+<mat-card>
+    <mat-card-title-group>Identité</mat-card-title-group>
+    <mat-grid-list cols="1" rowHeight="55px">
+        <mat-grid-tile
+                *ngFor="let tile of tiles"
+                [colspan]="tile.cols"
+                [rowspan]="tile.rows">
+            <label>
+                {{tile.text}}<br>
+                <input matInput placeholder="{{tile.txtPlaceholder}}">
+            </label>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="1" rowHeight="70px">
+        <mat-grid-tile>
+            <button mat-stroked-button type="submit" routerLink="/">Précédent</button>
+            <button mat-stroked-button type="submit" routerLink="/mini-bio">Suivant</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>
+
+

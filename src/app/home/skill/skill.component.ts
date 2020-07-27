@@ -19,7 +19,8 @@ export class SkillComponent implements OnInit {
     {text: 'Prénom', cols: 1, rows: 1, txtPlaceholder: 'Ex. Bob', formControlName: 'prenom'},
     {text: 'Age', cols: 1, rows: 1, txtPlaceholder: 'Ex. 101 ans', formControlName: 'age'},
     {text: 'Ville', cols: 1, rows: 1, txtPlaceholder: 'Ex. Manchester', formControlName: 'ville'},
-    {text: 'N° de téléphone', cols: 1, rows: 1, txtPlaceholder: 'Ex. 0760052580', formControlName: 'tel'}
+    {text: 'N° de téléphone', cols: 1, rows: 1, txtPlaceholder: 'Ex. 0760052580', formControlName: 'tel'},
+    {text: 'Email', cols: 1, rows: 1, txtPlaceholder: 'Ex. bob.leblob@gmail.com', formControlName: 'mail'}
   ];
 
   constructor(  private fb: FormBuilder, private skillService: SkillService) { }
@@ -36,6 +37,7 @@ export class SkillComponent implements OnInit {
       age: '',
       ville: '',
       tel: '',
+      mail: ''
     });
   }
 

@@ -10,6 +10,7 @@ import { SkillComponent } from './home/skill/skill.component';
 import { MiniBioComponent } from './home/mini-bio/mini-bio.component';
 import { SkillListComponent } from './home/skill/skill-list/skill-list.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -24,14 +25,15 @@ import {ReactiveFormsModule} from '@angular/forms';
     MiniBioComponent,
     SkillListComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MaterialModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MaterialModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatTabsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

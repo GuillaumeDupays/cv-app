@@ -1,3 +1,4 @@
+
 export interface Skill {
     _id?: string;
     cvTitre: string;
@@ -6,4 +7,5 @@ export interface Skill {
     age: number;
     ville: string;
     tel: number;
+    mail: string
 }

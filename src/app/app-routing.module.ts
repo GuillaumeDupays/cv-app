@@ -7,7 +7,7 @@ import {MiniBioComponent} from 'src/app/home/mini-bio/mini-bio.component';
 import {SkillListComponent} from 'src/app/home/skill/skill-list/skill-list.component';
 
 const route : Routes = [
-  { path: '', component: SkillComponent },
+  { path: '', component: HomeComponent },
   { path: 'skills', component: SkillComponent },
   { path: 'mini-bio', component: MiniBioComponent },
   { path: 'skills-list', component: SkillListComponent }

@@ -1,1 +1,23 @@
 <p>mini-bio works!</p>
+
+<mat-card>
+    <mat-card-title>Identité</mat-card-title>
+    <mat-grid-list cols="1" rowHeight="55px">
+        <mat-grid-tile
+                *ngFor="let tile of"
+                [colspan]="tile.cols"
+                [rowspan]="tile.rows">
+            <label>
+                {{tile.text}}<br>
+                <input>
+            </label>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-list cols="1" rowHeight="70px">
+        <mat-grid-tile>
+            <button mat-stroked-button type="submit" routerLink="/">Précédent</button>
+            <button mat-stroked-button type="submit" routerLink="/mini-bio">Suivant</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>
+

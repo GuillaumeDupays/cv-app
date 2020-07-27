@@ -1,23 +1,30 @@
 <app-home></app-home>
 <mat-card>
-    <mat-card-title-group>Identité</mat-card-title-group>
+    <h1>Identité</h1>
+    <form [formGroup]="form" #formDirective = "ngForm" (submit)="addSkill(formDirective)">
     <mat-grid-list cols="1" rowHeight="55px">
         <mat-grid-tile
                 *ngFor="let tile of tiles"
                 [colspan]="tile.cols"
                 [rowspan]="tile.rows">
+
             <label>
                 {{tile.text}}<br>
-                <input matInput placeholder="{{tile.txtPlaceholder}}">
+                <input matInput placeholder="{{tile.txtPlaceholder}}" formControlName="{{tile.formControlName}}">
             </label>
         </mat-grid-tile>
     </mat-grid-list>
     <mat-grid-list cols="1" rowHeight="70px">
         <mat-grid-tile>
-            <button mat-stroked-button type="submit" routerLink="/">Précédent</button>
-            <button mat-stroked-button type="submit" routerLink="/mini-bio">Suivant</button>
+            <button mat-stroked-button type="submit">Valider</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+    </form>
+    <mat-grid-list cols="1" rowHeight="40px">
+        <mat-grid-tile>
+            <button mat-stroked-button routerLink="/">Précédent</button>
+            <button mat-stroked-button routerLink="/skills-list">Suivant</button>
         </mat-grid-tile>
     </mat-grid-list>
 </mat-card>
-
 

@@ -4,11 +4,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from 'src/app/home/home.component';
 import {SkillComponent} from 'src/app/home/skill/skill.component';
 import {MiniBioComponent} from 'src/app/home/mini-bio/mini-bio.component';
+import {SkillListComponent} from 'src/app/home/skill/skill-list/skill-list.component';
 
 const route : Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: SkillComponent },
   { path: 'skills', component: SkillComponent },
-  { path: 'mini-bio', component: MiniBioComponent }
+  { path: 'mini-bio', component: MiniBioComponent },
+  { path: 'skills-list', component: SkillListComponent }
 ]
 
 @NgModule({

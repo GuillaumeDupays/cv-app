@@ -1,3 +1,4 @@
+import {Skill} from 'src/app/models/skill';
 
 
 export interface Tile {
@@ -5,4 +6,6 @@ export interface Tile {
     rows: number;
     text: string;
     txtPlaceholder: string;
+    formControlName: string;
 }
+

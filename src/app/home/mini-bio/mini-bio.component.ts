@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Tile} from 'src/app/models/tile';
+import {SkillComponent} from 'src/app/home/skill/skill.component';
 
 @Component({
   selector: 'app-mini-bio',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiniBioComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

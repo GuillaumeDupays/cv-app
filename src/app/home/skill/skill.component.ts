@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Tile} from 'src/app/models/tile';
+import {skipUntil} from 'rxjs/operators';
+import {FormBuilder, FormGroup, FormGroupDirective} from '@angular/forms';
+import {Skill} from 'src/app/models/skill';
+import {SkillService} from 'src/app/services/skill.service';
 
 @Component({
   selector: 'app-skill',
@@ -7,17 +11,53 @@ import {Tile} from 'src/app/models/tile';
   styleUrls: ['./skill.component.scss']
 })
 export class SkillComponent implements OnInit {
+  form: FormGroup;
+
   tiles: Tile[] = [
-    {text: 'Titre du C.V', cols: 1, rows: 1, txtPlaceholder: 'Ex. Développeur'},
-    {text: 'Nom', cols: 1, rows: 1, txtPlaceholder: 'Ex. De Blob'},
-    {text: 'Prénom', cols: 1, rows: 1, txtPlaceholder: 'Ex. Bob'},
-    {text: 'Age', cols: 1, rows: 1, txtPlaceholder: 'Ex. 101 ans'},
-    {text: 'Ville', cols: 1, rows: 1, txtPlaceholder: 'Ex. Manchester'},
-    {text: 'N° de téléphone', cols: 1, rows: 1, txtPlaceholder: 'Ex. 0760052580'}
+    {text: 'Titre du C.V', cols: 1, rows: 1, txtPlaceholder: 'Ex. Développeur', formControlName: 'cvTitre'},
+    {text: 'Nom', cols: 1, rows: 1, txtPlaceholder: 'Ex. De Blob', formControlName: 'nom'},
+    {text: 'Prénom', cols: 1, rows: 1, txtPlaceholder: 'Ex. Bob', formControlName: 'prenom'},
+    {text: 'Age', cols: 1, rows: 1, txtPlaceholder: 'Ex. 101 ans', formControlName: 'age'},
+    {text: 'Ville', cols: 1, rows: 1, txtPlaceholder: 'Ex. Manchester', formControlName: 'ville'},
+    {text: 'N° de téléphone', cols: 1, rows: 1, txtPlaceholder: 'Ex. 0760052580', formControlName: 'tel'}
   ];
-  constructor() { }
+
+  constructor(  private fb: FormBuilder, private skillService: SkillService) { }
 
   ngOnInit(): void {
+    this.creationForm();
+  }
+
+  creationForm() {
+    this.form = this.fb.group({
+      cvTitre: '',
+      nom: '',
+      prenom: '',
+      age: '',
+      ville: '',
+      tel: '',
+    });
+  }
+
+  addSkill(formDirective: FormGroupDirective) {
+    if (this.form.valid) {
+      console.log(this.form.value);
+      this.skillService
+          .addSkill(this.form.value)
+          .subscribe(data=> this.handleSuccess(data, formDirective));
+    }
+  }
+
+
+  deleteSkill(selectedOptions) {
+    console.log('selected', selectedOptions);
+  }
+
+  handleSuccess(data, formDirective) {
+    console.log('Nickel - skill ajoutée en Bdd !', data);
+    this.form.reset();
+    formDirective.resetForm();
+    this.skillService.dispatchpostCreated(data._id);
   }
 
 }

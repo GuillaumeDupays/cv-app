@@ -14,7 +14,6 @@ export class SkillComponent implements OnInit {
   form: FormGroup;
 
   tiles: Tile[] = [
-    {text: 'Titre du C.V', cols: 1, rows: 1, txtPlaceholder: 'Ex. Développeur', formControlName: 'cvTitre'},
     {text: 'Nom', cols: 1, rows: 1, txtPlaceholder: 'Ex. De Blob', formControlName: 'nom'},
     {text: 'Prénom', cols: 1, rows: 1, txtPlaceholder: 'Ex. Bob', formControlName: 'prenom'},
     {text: 'Age', cols: 1, rows: 1, txtPlaceholder: 'Ex. 101 ans', formControlName: 'age'},
@@ -31,7 +30,6 @@ export class SkillComponent implements OnInit {
 
   creationForm() {
     this.form = this.fb.group({
-      cvTitre: '',
       nom: '',
       prenom: '',
       age: '',

@@ -3,18 +3,19 @@ mat-card {
   max-width: 300px;
   margin: 0 auto;
 }
+
 .example-small-box, .example-large-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px;
+  margin: 0 auto;
   padding: 16px;
   border-radius: 8px;
 }
 
 .example-small-box {
-  height: 400px;
-  width: 250px;
+  height: 300px;
+  width: 300px;
 }
 
 .example-large-box {

@@ -10,7 +10,7 @@ import {Bio} from 'src/app/models/bio';
 })
 export class MiniBioComponent implements OnInit {
   bio : Bio[] = [
-    {titreBio:'Bio', txtBio:'Je m\'/appelle Guillaume et j\'/ai des compétences de ouf !'}
+    {titreBio:'Bio', txtBio:'Je m\'appelle Guillaume et j\'ai des compétences de ouf !'}
   ];
 
   constructor() { }

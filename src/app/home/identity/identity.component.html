@@ -1,0 +1,15 @@
+
+<h1>Identité</h1>
+<form [formGroup]="form" #formDirective = "ngForm" (submit)="addIdendity(formDirective)">
+    <div *ngFor="let tile of tiles">
+        <label>
+            {{tile.text}}<br>
+            <input matInput placeholder="{{tile.txtPlaceholder}}" formControlName="{{tile.formControlName}}">
+        </label>
+    </div>
+
+    <div>
+        <button mat-stroked-button type="submit">Valider</button>
+    </div>
+</form>
+

@@ -11,6 +11,9 @@ import { MiniBioComponent } from './home/mini-bio/mini-bio.component';
 import { SkillListComponent } from './home/skill/skill-list/skill-list.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
+import { AddMiniBioComponent } from './home/mini-bio/add-mini-bio/add-mini-bio.component';
+import { IdentityComponent } from './home/identity/identity.component';
+import { IdentityListComponent } from './home/identity/identity-list/identity-list.component';
 
 
 
@@ -23,7 +26,10 @@ import {MatTabsModule} from '@angular/material/tabs';
     HomeComponent,
     SkillComponent,
     MiniBioComponent,
-    SkillListComponent
+    SkillListComponent,
+    AddMiniBioComponent,
+    IdentityComponent,
+    IdentityListComponent
   ],
     imports: [
         BrowserModule,

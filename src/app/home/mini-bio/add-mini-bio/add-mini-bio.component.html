@@ -1,0 +1,9 @@
+<h1>Bio</h1>
+<form [formGroup]="form" #formDirective= "ngForm" (submit)="addBio(formDirective)">
+    <div *ngFor="let tile of tiles">
+        <label>
+            <textarea placeholder="{{tile.txtPlaceholder}}" formControlName="{{tile.formControlName}}"></textarea>
+        </label>
+    </div><br>
+    <button mat-raised-button type="submit">Enregistrer</button>
+</form>

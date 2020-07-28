@@ -8,9 +8,6 @@ import {SkillListComponent} from 'src/app/home/skill/skill-list/skill-list.compo
 
 const route : Routes = [
   { path: '', component: HomeComponent },
-  { path: 'skills', component: SkillComponent },
-  { path: 'mini-bio', component: MiniBioComponent },
-  { path: 'skills-list', component: SkillListComponent }
 ]
 
 @NgModule({

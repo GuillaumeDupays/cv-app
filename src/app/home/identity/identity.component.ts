@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {Tile} from 'src/app/models/tile';
-import {skipUntil} from 'rxjs/operators';
 import {FormBuilder, FormGroup, FormGroupDirective} from '@angular/forms';
-import {Identity} from 'src/app/models/identity';
+import {Tile} from 'src/app/models/tile';
 import {SkillService} from 'src/app/services/skill.service';
 
 @Component({
-  selector: 'app-skill',
-  templateUrl: './skill.component.html',
-  styleUrls: ['./skill.component.scss']
+  selector: 'app-identity',
+  templateUrl: './identity.component.html',
+  styleUrls: ['./identity.component.scss']
 })
-export class SkillComponent implements OnInit {
+export class IdentityComponent implements OnInit {
   form: FormGroup;
 
   tiles: Tile[] = [
@@ -39,25 +37,20 @@ export class SkillComponent implements OnInit {
     });
   }
 
-  addSkill(formDirective: FormGroupDirective) {
+  addIdendity(formDirective: FormGroupDirective) {
     if (this.form.valid) {
       console.log(this.form.value);
       this.skillService
-          .addSkill(this.form.value)
+          .addIdendity(this.form.value)
           .subscribe(data=> this.handleSuccess(data, formDirective));
     }
   }
 
 
-  deleteSkill(selectedOptions) {
-    console.log('selected', selectedOptions);
-  }
-
   handleSuccess(data, formDirective) {
-    console.log('Nickel - skill ajoutée en Bdd !', data);
+    console.log('Nickel - Identité ajoutée en Bdd !', data);
     this.form.reset();
     formDirective.resetForm();
     this.skillService.dispatchpostCreated(data._id);
   }
-
 }

@@ -1,5 +1,5 @@
 
-export interface Skill {
+export interface Identity {
     _id?: string;
     cvTitre: string;
     nom: string;

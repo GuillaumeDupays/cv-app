@@ -1,0 +1,33 @@
+
+mat-card {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+button {
+  width: 175px;
+}
+
+button:hover {
+  font-weight: normal;
+  font-size: large;
+  background-color: lightblue;
+}
+
+button:active{
+  background-color: yellowgreen;
+  color: white;
+}
+input:hover {
+  background-color: lightblue;
+}
+
+input {
+  border: hidden;
+}
+
+label button{
+  font-weight: lighter;
+}
+
